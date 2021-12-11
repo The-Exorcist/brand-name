@@ -185,7 +185,7 @@
 		padding: 0px 25px 0px 0px;
 		background: $blueColor;
 		border-radius: 5px;
-		transition: all .3s ease 0s;
+		transition: background .3s ease 0s;
 
 		&::before {
 			position: absolute;
@@ -195,7 +195,7 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				background: #1988c8;
+				background: #107fc0;
 			}
 		}
 	}

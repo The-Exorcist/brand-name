@@ -1143,9 +1143,9 @@ body.ie ._ibg img {
   padding: 0px 25px 0px 0px;
   background: #23A6F0;
   border-radius: 5px;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: background 0.3s ease 0s;
+  -o-transition: background 0.3s ease 0s;
+  transition: background 0.3s ease 0s;
 }
 
 .registration-header__membership::before {
@@ -1897,6 +1897,9 @@ body.ie ._ibg img {
   letter-spacing: 0.2px;
   background-color: #23A6F0;
   border-radius: 5px;
+  -webkit-transition: background 0.3s ease 0s;
+  -o-transition: background 0.3s ease 0s;
+  transition: background 0.3s ease 0s;
 }
 
 .features-columns-pricing {
@@ -2073,6 +2076,9 @@ body.ie ._ibg img {
   height: 52px;
   border-radius: 5px;
   background-color: #23A6F0;
+  -webkit-transition: background 0.3s ease 0s;
+  -o-transition: background 0.3s ease 0s;
+  transition: background 0.3s ease 0s;
 }
 
 .consulting {
@@ -2124,6 +2130,9 @@ body.ie ._ibg img {
       -ms-flex: 0 0 163px;
           flex: 0 0 163px;
   height: 52px;
+  -webkit-transition: background 0.3s ease 0s;
+  -o-transition: background 0.3s ease 0s;
+  transition: background 0.3s ease 0s;
 }
 
 @media (min-width: 991.98px) {
@@ -2594,7 +2603,7 @@ body.ie ._ibg img {
   }
 
   .registration-header__membership:hover {
-    background: #1988c8;
+    background: #107fc0;
   }
 
   .content-main__button:hover {
@@ -2633,6 +2642,18 @@ body.ie ._ibg img {
   .item-main._active:hover > * {
     color: inherit;
     background-color: #fff;
+  }
+
+  .item-columns-pricing__button:hover {
+    background: #107fc0;
+  }
+
+  .form-appointment__button:hover {
+    background: #107fc0;
+  }
+
+  .consulting__btn:hover {
+    background: #107fc0;
   }
 }
 
