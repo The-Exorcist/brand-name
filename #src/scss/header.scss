@@ -72,13 +72,16 @@
 	&__actions {
 		@media (max-width:$md3+px) {
 			position: absolute;
-			top: 20px;
+			top: 33px;
 			right: 67px;
 
 			display: flex;
 			justify-content: space-between;
 			width: 72px;
 
+			.header._scroll & {
+				top: 20px;
+			}
 		}
 	}
 }
@@ -239,12 +242,16 @@
 	@media (max-width: $md3+px) {
 		display: block;
 		position: absolute;
-		top: 21px;
+		top: 33px;
 		right: 20px;
 		width: 24px;
 		height: 18px;
 		cursor: pointer;
 		z-index: 5;
+
+		.header._scroll & {
+			top: 21px;
+		}
 
 		span {
 			position: absolute;
@@ -271,6 +278,7 @@
 
 		&._active {
 			height: 20px;
+			// top: 22px;
 
 			span {
 				transform: scale(0);
