@@ -264,8 +264,8 @@ body {
 
 .row-main {
 	display: grid;
+	align-items: end;
 	grid-template-columns: repeat(auto-fit, 328px);
-	grid-template-rows: minmax(200px, 1fr);
 	gap: 30px;
 	justify-content: center;
 
@@ -277,6 +277,8 @@ body {
 	color: $blueColor;
 	background-color: $whiteColor;
 	padding: 35px 38px 35px 40px;
+	height: auto;
+	cursor: pointer;
 
 	&._active {
 		background-color: $blueColor;
@@ -399,8 +401,8 @@ body {
 
 .content-strategy {
 	display: grid;
+	align-items: end;
 	grid-template-columns: repeat(auto-fit, 328px);
-	grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr);
 	gap: 30px;
 	justify-content: center;
 
@@ -408,6 +410,7 @@ body {
 	&__item {
 		background: #fff;
 		padding: 40px;
+		height: auto;
 	}
 
 	// .content-strategy__body
@@ -517,19 +520,19 @@ body {
 
 		//.item-testimonials__photo_first
 		&_first {
-			background: url('../img/img/clients/client_1.jpg') center no-repeat;
+			background: url('../img/img/clients/client_1.jpg') top no-repeat;
 
 			@media (max-width:$md4+px) {
-				background: url('../img/img/clients/client_1-m.jpg') center no-repeat;
+				background: url('../img/img/clients/client_1-m.jpg') top no-repeat;
 			}
 		}
 
 		//.item-testimonials__photo_second
 		&_second {
-			background: url('../img/img/clients/client_2.jpg') center no-repeat;
+			background: url('../img/img/clients/client_2.jpg') top no-repeat;
 
 			@media (max-width:$md4+px) {
-				background: url('../img/img/clients/client_2-m.jpg') center no-repeat;
+				background: url('../img/img/clients/client_2-m.jpg') top no-repeat;
 			}
 		}
 	}
@@ -636,7 +639,7 @@ body {
 
 	// .questions-faq__item
 	&__item {
-		height: stretch;
+		height: auto;
 		padding: 25px 28px;
 		border-radius: 9px;
 		background-color: $whiteColor;
@@ -709,7 +712,9 @@ body {
 }
 
 .columns-pricing {
-	display: flex;
+	display: grid;
+	gap: 15px;
+	grid-template-columns: repeat(auto-fit, minmax(auto, 340px));
 	justify-content: center;
 
 	@media (max-width:$md3+px) {
@@ -724,11 +729,16 @@ body {
 }
 
 .item-columns-pricing {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+
 	background-color: $whiteColor;
-	margin: 0 15px;
 	padding: 50px 30px;
 	border: 1px solid #23A6F0;
 	border-radius: 10px;
+	height: 100%;
 
 	@media (max-width:$md3+px) {
 		margin: 0;
@@ -806,15 +816,16 @@ body {
 	// .item-columns-pricing__button
 	&__button {
 		display: flex;
-		align-items: center;
 		justify-content: center;
+		align-items: center;
+
 		height: 52px;
 
 		color: #fff;
 		font-weight: 700;
-		line-height: 157%;
 		text-align: center;
 		letter-spacing: 0.2px;
+
 		background-color: $blueColor;
 		border-radius: 5px;
 		transition: background 0.3s ease 0s;
@@ -831,39 +842,67 @@ body {
 	color: #252B42;
 	font-size: 14px;
 	font-weight: 600;
-	line-height: 24px;
 	letter-spacing: 0.2px;
+
 	margin: 0px 0px 35px 0px;
-	padding: 0px 0px 0px 40px;
+	// padding: 0px 0px 0px 40px;
+	flex: 1 1 auto;
 
 	// .features-columns-pricing__item
 	&__item {
 		position: relative;
+		padding: 0px 0px 0px 42px;
+		line-height: 32px;
 
 		&:not(:last-child) {
-			margin: 0px 0px 15px 0px;
+			margin: 0px 0px 20px 0px;
 		}
 
 		&::before {
-			position: absolute;
-			top: calc(11px);
-			left: calc(-10px - (32px / 2 + 9px));
-			z-index: 2;
+			@extend %ic;
+			content: "\e903";
+
 			color: #fff;
 			font-size: 11px;
+
+			position: absolute;
+			top: 11px;
+			left: 9px;
+			z-index: 5;
 		}
 
 		&::after {
 			content: '';
-			display: block;
 			position: absolute;
-			top: 0px;
-			left: -42px;
-			width: 30px;
-			height: 30px;
-			background-color: #2DC071;
+			left: 0;
+
+			width: 32px;
+			height: 32px;
 			border-radius: 50%;
+			background-color: #2DC071;
 		}
+
+		// &::before {
+		// 	position: absolute;
+		// 	top: calc(11px);
+		// 	left: calc(-10px - (32px / 2 + 9px));
+		// 	z-index: 2;
+		// 	color: #fff;
+		// 	font-size: 11px;
+		// }
+
+		// &::after {
+		// 	content: '';
+		// 	display: block;
+		// 	position: absolute;
+		// 	top: 0px;
+		// 	left: -42px;
+
+		// 	width: 30px;
+		// 	height: 30px;
+		// 	background-color: #2DC071;
+		// 	border-radius: 50%;
+		// }
 
 		//.features-columns-pricing__item_unincluded
 		&_unincluded {
@@ -1052,6 +1091,7 @@ body {
 	// .consulting__body
 	&__body {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 
 		@media (max-width:$md3+px) {
@@ -1063,6 +1103,7 @@ body {
 	// .consulting__info
 	&__info {
 		color: #fff;
+		padding: 0px 20px 0px 0px;
 
 		@media (max-width:$md3+px) {
 			margin: 0px 0px 50px 0px;
